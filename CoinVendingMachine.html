@@ -145,7 +145,7 @@
       <input type="text" id="Don" value="">
       <label for="Don">현재금액</label>
       <input accesskey="Enter" type="text" id="money" value="">
-      <label for="money"><button id = "gogo">돈내놔!</button></label>  
+      <label for="money"><button id = "gogo">입금 금액</button></label>  
       <button id="gacha">눌러라</button>
     </div>
 
@@ -187,35 +187,54 @@
     // let input2 = document.body.children[2].children[4]
     console.dir(document)
 
+    // const sellList =[
+    //   {name : "url(1.png)", price : 300},
+    //   {name : "url(2.png)", price : 400}, 
+    //   {name : "url(3.png)", price : 500}, 
+    //   {name : "url(4.png)", price : 600}, 
+    //   {name : "url(5.png)", price : 700}, 
+    //   {name : "url(6.png)", price : 800}, 
+    //   {name : "url(7.png)", price : 900}, 
+    //   {name : "url(8.png)", price : 1000}, 
+    //   {name : "url(9.png)", price : 1100}, 
+    //   {name : "url(10.png)", price : 1200}, 
+    //   {name : "url(11.png)", price : 1300}, 
+    //   {name : "url(12.png)", price : 1400}, 
+    //   {name : "url(13.png)", price : 1500}, 
+    //   {name : "url(14.png)", price : 1600}, 
+    //   {name : "url(15.png)", price : 1700}, 
+    //   {name : "url(16.png)", price : 1800}, 
+    //   {name : "url(17.png)", price : 1900}, 
+    //   {name : "url(18.png)", price : 2000}, 
+    //   {name : "url(19.png)", price : 2100}, 
+    //   {name : "url(20.png)", price : 2200}, 
+    // ];   
+
     const sellList =[
-      {name : "url(1.png)", price : 300},
-      {name : "url(2.png)", price : 400}, 
-      {name : "url(3.png)", price : 500}, 
-      {name : "url(4.png)", price : 600}, 
-      {name : "url(5.png)", price : 700}, 
-      {name : "url(6.png)", price : 800}, 
-      {name : "url(7.png)", price : 900}, 
-      {name : "url(8.png)", price : 1000}, 
-      {name : "url(9.png)", price : 1100}, 
-      {name : "url(10.png)", price : 1200}, 
-      {name : "url(11.png)", price : 1300}, 
-      {name : "url(12.png)", price : 1400}, 
-      {name : "url(13.png)", price : 1500}, 
-      {name : "url(14.png)", price : 1600}, 
-      {name : "url(15.png)", price : 1700}, 
-      {name : "url(16.png)", price : 1800}, 
-      {name : "url(17.png)", price : 1900}, 
-      {name : "url(18.png)", price : 2000}, 
-      {name : "url(19.png)", price : 2100}, 
-      {name : "url(20.png)", price : 2200}, 
+      {name : "키스하는_얼굴", price : 300},
+      {name : "바보같은_얼굴", price : 400}, 
+      {name : "가", price : 500}, 
+      {name : "가", price : 600}, 
+      {name : "가", price : 700}, 
+      {name : "가", price : 800}, 
+      {name : "가", price : 900}, 
+      {name : "가", price : 1000}, 
+      {name : "가", price : 1100}, 
+      {name : "가", price : 1200}, 
+      {name : "나가", price : 1300}, 
+      {name : "나가", price : 1400}, 
+      {name : "나가", price : 1500}, 
+      {name : "나", price : 1600}, 
+      {name : "나", price : 1700}, 
+      {name : "나", price : 1800}, 
+      {name : "나", price : 1900}, 
+      {name : "나", price : 2000}, 
+      {name : "나", price : 2100}, 
+      {name : "나", price : 2200}, 
     ];   
+
     gogo.addEventListener("click", function() {
-      let a = money.value 
-      Don.value = a
-    // if(money.value !== Don.value) {
-    //  let b = "money" + "Don"
-    //  money.textContent = b + a;
-    // }
+     Don += money + Don
     })  
 
 
