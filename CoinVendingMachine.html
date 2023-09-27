@@ -244,20 +244,28 @@
     }
     // 배열 속 객체에서 price 텍스트를 불러오는 반복문.(숫자를 인식)
     gogo.addEventListener("click", function () {
-      total += parseInt(money.value);
-      Don.value = total;
+      // if(typeof("money") !== "number"){
+      //   Don.value = "없어";
+      //   money.value = null;
+      // }else{
+        total += parseInt(money.value);
+        Don.value = total;
+      // }
+
+      // total += parseInt(money.value);
+      // Don.value = total;
     })
 
 
 
-    if(typeof(money) === "munber"){
-      total += parseInt(money.value);
-      Don.value = total;
-    }else{
-     let inputDon = don.value
-     inputDon = "금액을 다시 넣으시기 바랍니다"
-    console.log(inputDon)
-    }
+    // if(typeof(money) === "munber"){
+    //   total += parseInt(money.value);
+    //   Don.value = total;
+    // }else{
+    //  let inputDon = don.value
+    //  inputDon = "금액을 다시 넣으시기 바랍니다"
+    // console.log(inputDon)
+    // }
     // *금액을 입력하면 현재금액에 중첩이 되는 방식이다.
 
     //NaN이 뜨는 문제를 해결해보자.
