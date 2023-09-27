@@ -185,11 +185,6 @@
     let money = document.getElementById("money");
     let total = 0;
 
-    // let label1 = document.body.children[2].children[1]
-    // let input1 = document.body.children[2].children[2]
-    // let label2 = document.body.children[2].children[3]
-    // let input2 = document.body.children[2].children[4]
-    console.dir(document)
 
     // const sellList =[
     //   {name : "url(1.png)", price : 300},
@@ -215,28 +210,39 @@
     // ];   
 
     const sellList = [
-      { name: "키스하는_얼굴", price: 300 },
-      { name: "바보같은_얼굴", price: 400 },
+      { name: "버", price: 300 },
+      { name: "머", price: 400 },
       { name: "가", price: 500 },
-      { name: "가", price: 600 },
-      { name: "가", price: 700 },
-      { name: "가", price: 800 },
-      { name: "가", price: 900 },
-      { name: "가", price: 1000 },
-      { name: "가", price: 1100 },
-      { name: "가", price: 1200 },
-      { name: "나가", price: 1300 },
-      { name: "나가", price: 1400 },
-      { name: "나가", price: 1500 },
-      { name: "나", price: 1600 },
-      { name: "나", price: 1700 },
-      { name: "나", price: 1800 },
-      { name: "나", price: 1900 },
-      { name: "나", price: 2000 },
-      { name: "나", price: 2100 },
-      { name: "나", price: 2200 },
+      { name: "나", price: 600 },
+      { name: "다", price: 700 },
+      { name: "라", price: 800 },
+      { name: "마", price: 900 },
+      { name: "바", price: 1000 },
+      { name: "사", price: 1100 },
+      { name: "아", price: 1200 },
+      { name: "자", price: 1300 },
+      { name: "차", price: 1400 },
+      { name: "카", price: 1500 },
+      { name: "타", price: 1600 },
+      { name: "파", price: 1700 },
+      { name: "하", price: 1800 },
+      { name: "거", price: 1900 },
+      { name: "너", price: 2000 },
+      { name: "더", price: 2100 },
+      { name: "러", price: 2200 },
     ];
-
+    // 이미지를 불러오기 실패하여 텍스트로 대체.
+    for (let e = 0; e < sellList.length; e++) {
+      let but = root.children[0].children[e]
+      but.style.backgroundImage = sellList[e].name
+      console.dir(but)
+    }
+    // 배열속 객체에서 name이미지를 불러오는 반복문(숫자를 인식)
+    for (let e = 0; e < sellList.length; e++) {
+      let but = root.children[0].children[e]
+      but.textContent = sellList[e].price
+    }
+    // 배열 속 객체에서 price 텍스트를 불러오는 반복문.(숫자를 인식)
     gogo.addEventListener("click", function () {
       total += parseInt(money.value);
       Don.value = total;
@@ -244,16 +250,19 @@
 
 
 
-    for (let e = 0; e < sellList.length; e++) {
-      let but = root.children[0].children[e]
-      but.style.backgroundImage = sellList[e].name
-      console.dir(but)
+    if(typeof(money) === "munber"){
+      total += parseInt(money.value);
+      Don.value = total;
+    }else{
+     let inputDon = don.value
+     inputDon = "금액을 다시 넣으시기 바랍니다"
+    console.log(inputDon)
     }
+    // *금액을 입력하면 현재금액에 중첩이 되는 방식이다.
 
-    for (let e = 0; e < sellList.length; e++) {
-      let but = root.children[0].children[e]
-      but.textContent = sellList[e].price
-    }
+    //NaN이 뜨는 문제를 해결해보자.
+
+
 
   </script>
 </body>
