@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    * {
+    *{
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -18,44 +18,7 @@
       z-index: 0;
       position: relative;
     }
-
-    /* .nomoney {
-      z-index: -1;
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
-      background-color: pink;
-    }
-    .getone {
-      position: absolute;
-      z-index: -1;
-      width: 100vw;
-      height: 100vh;
-      background-color: pink;
-    }
-
-    .gettwo {
-      position: absolute;
-      z-index: -1;
-      width: 100vw;
-      height: 100vh;
-      background-color: pink;
-    } */
-
-    /* .change {
-      z-index: -2;
-      position: absolute;
-      width: 70vw;
-      height: 70vh;
-      background-color: lightgreen;
-    } */
-
-    /* .nochange{
-      z-index: -2;
-      position: absolute;
-    } */
-
-    #root>div:nth-child(1) {
+    #root>div:nth-child(1){
       width: 60vw;
       height: 90vh;
       background-color: lightgrey;
@@ -66,16 +29,16 @@
       justify-content: center;
     }
 
-    #root>div:nth-child(2) {
+    #root>div:nth-child(2){
       width: 1vw;
       height: 90vh;
       background-color: lightgrey;
       margin: 1vw;
     }
 
-    #root>div:nth-child(3) {
+    #root>div:nth-child(3){
       width: 30vw;
-      height: 90vh;
+      height:90vh;
       background-color: lightgrey;
       display: flex;
       flex-direction: column;
@@ -83,24 +46,24 @@
       align-items: center;
     }
 
-    #root>div:nth-child(3)>p {
+    #root>div:nth-child(3)>p{
       font-size: 3rem;
     }
 
-    #value {
+    #value{
       width: 20vw;
       height: 5vh;
       margin: 5vw;
     }
 
-    #gacha {
-      width: 10vw;
+    #gachaButton{
+      width: 15vw;
       height: 10vw;
       background-color: bisque;
-      border-radius: 60%;
+      border-radius:30%;
+      margin-top: 20px;
     }
-
-    #root>div:nth-child(1)>button {
+    #root>div:nth-child(1)>button{
       width: 8vw;
       height: 8vw;
       background-color: antiquewhite;
@@ -113,9 +76,12 @@
       display: flex;
       align-items: flex-end;
     }
+    input{
+      width: 15vw;
+      height: 2vh;
+      background-color: #478521}
   </style>
 </head>
-
 <body>
   <div id="root">
     <div>
@@ -124,155 +90,30 @@
       <button>3</button>
       <button>4</button>
       <button>5</button>
-      <button>6</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>10</button>
-      <button>11</button>
-      <button>12</button>
-      <button>13</button>
-      <button>14</button>
-      <button>15</button>
-      <button>16</button>
-      <button>17</button>
-      <button>18</button>
-      <button>19</button>
-      <button>20</button>
-
     </div>
-    <div></div>
+      <div></div>
     <div>
-      <p>LJBL VENDING MACHINE</p>
+      <p>LJBL VENDING MACHINE</p>      
+      <label for="Don">돈을 넣으시오</label>
       <input type="text" id="Don" value="">
-      <label for="Don">현재금액</label>
-      <input accesskey="Enter" type="text" id="money" value="">
-      <label for="money"><button id="gogo">입금 금액</button></label>
-      <button id="gacha">눌러라</button>
+      <button id="gachaButton">클릭</button>
     </div>
-
-    <!-- <div class="nomoney">
-    <p>돈 넣어!</p>
-  </div>  
-
-  <div class="getone">
-    <p>를 얻었다!</p>
-    <button></button>
-  </div>
-
-  <div class="change">
-    <p>이 남았습니다!</p>
-    <button></button>
-  </div>
-
-  <div class="gettwo">
-    <p>를 얻었다!</p>
-    <button></button>
-  </div>
-
-  <div class="nochange">
-    <p>잔돈이 없습니다!</p>
-    <button></button>
-  </div> -->
   </div>
   <script>
-    let root = document.getElementById("root")
-    let gachaButton = document.getElementById("gacha")
-    let box = document.getElementById("emo")
-    let button = document.getElementById("button")
-    let gogo = document.getElementById("gogo")
-    let Don = document.getElementById("Don")
-    let money = document.getElementById("money");
-    let total = 0;
-
-
-    // const sellList =[
-    //   {name : "url(1.png)", price : 300},
-    //   {name : "url(2.png)", price : 400}, 
-    //   {name : "url(3.png)", price : 500}, 
-    //   {name : "url(4.png)", price : 600}, 
-    //   {name : "url(5.png)", price : 700}, 
-    //   {name : "url(6.png)", price : 800}, 
-    //   {name : "url(7.png)", price : 900}, 
-    //   {name : "url(8.png)", price : 1000}, 
-    //   {name : "url(9.png)", price : 1100}, 
-    //   {name : "url(10.png)", price : 1200}, 
-    //   {name : "url(11.png)", price : 1300}, 
-    //   {name : "url(12.png)", price : 1400}, 
-    //   {name : "url(13.png)", price : 1500}, 
-    //   {name : "url(14.png)", price : 1600}, 
-    //   {name : "url(15.png)", price : 1700}, 
-    //   {name : "url(16.png)", price : 1800}, 
-    //   {name : "url(17.png)", price : 1900}, 
-    //   {name : "url(18.png)", price : 2000}, 
-    //   {name : "url(19.png)", price : 2100}, 
-    //   {name : "url(20.png)", price : 2200}, 
-    // ];   
-
-    const sellList = [
-      { name: "버", price: 300 },
-      { name: "머", price: 400 },
-      { name: "가", price: 500 },
-      { name: "나", price: 600 },
-      { name: "다", price: 700 },
-      { name: "라", price: 800 },
-      { name: "마", price: 900 },
-      { name: "바", price: 1000 },
-      { name: "사", price: 1100 },
-      { name: "아", price: 1200 },
-      { name: "자", price: 1300 },
-      { name: "차", price: 1400 },
-      { name: "카", price: 1500 },
-      { name: "타", price: 1600 },
-      { name: "파", price: 1700 },
-      { name: "하", price: 1800 },
-      { name: "거", price: 1900 },
-      { name: "너", price: 2000 },
-      { name: "더", price: 2100 },
-      { name: "러", price: 2200 },
-    ];
-    // 이미지를 불러오기 실패하여 텍스트로 대체.
-    for (let e = 0; e < sellList.length; e++) {
-      let but = root.children[0].children[e]
-      but.style.backgroundImage = sellList[e].name
-      console.dir(but)
-    }
-    // 배열속 객체에서 name이미지를 불러오는 반복문(숫자를 인식)
-    for (let e = 0; e < sellList.length; e++) {
-      let but = root.children[0].children[e]
-      but.textContent = sellList[e].price
-    }
-    // 배열 속 객체에서 price 텍스트를 불러오는 반복문.(숫자를 인식)
-    gogo.addEventListener("click", function () {
-      // if(typeof(money.value) !== "number"){
-      //   Don.value = "없어";
-      //   money.value = null;
-      // }else{
-      //   total += parseInt(money.value);
-      //   Don.value = total;
-      // }
-
-      total += parseInt(money.value);
-      Don.value = total;
-    })
+    let liButton = [
+      "400",
+      "700",
+      "600",
+      "900",
+      "100",
+      ];
+    let root = document.getElementById('root');
+    console.dir(root)
 
 
 
-    // if(typeof(money) === "munber"){
-    //   total += parseInt(money.value);
-    //   Don.value = total;
-    // }else{
-    //  let inputDon = don.value
-    //  inputDon = "금액을 다시 넣으시기 바랍니다"
-    // console.log(inputDon)
-    // }
-    // *금액을 입력하면 현재금액에 중첩이 되는 방식이다.
-
-    //NaN이 뜨는 문제를 해결해보자.
 
 
-
-  </script>
+  </script>  
 </body>
-
 </html>
